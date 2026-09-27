@@ -1,0 +1,12 @@
+# ConvertX configuration
+# Copy this file to .env and adjust as needed.
+# app.py reads MAX_FILE_MB as a plain Python constant today - promote it to
+# os.environ.get("CONVERTX_MAX_FILE_MB", 50) if you want this to take effect.
+
+CONVERTX_MAX_FILE_MB=50
+
+# How long converted/uploaded files should be considered valid before
+# being treated as expired, in minutes. ConvertX keeps files in memory only
+# (per Streamlit session) and never writes them to disk, so this is
+# documentation of intent rather than an enforced disk-cleanup job.
+CONVERTX_FILE_TTL_MINUTES=60
